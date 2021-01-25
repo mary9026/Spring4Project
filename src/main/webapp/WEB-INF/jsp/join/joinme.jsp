@@ -23,24 +23,27 @@
         <div class="card card-body bg-light">
             <h3  class="font-weight-bold">일반회원</h3>
 
-            <form name="joinfrm">
+            <form name="joinfrm" id="joinfrm">
                 <div class="row">
                     <div class="col-11 offset-1">
                         <div class="form-group row">
                             <label class="col-2 col-form-label text-info" for="name">이름</label>
-                            <input type="text" name="name" id="name" class="form-control col-2 border-info" readonly>
+                            <input type="text" name="name" id="name" class="form-control col-2 border-info" readonly
+                                value="${param.name}">
                         </div> <!-- 이름 -->
 
                         <div class="form-group row">
                             <label class="col-2 col-form-label text-info" for="jumin1">주민등록번호</label>
-                            <input type="text" name="jumin1" id="jumin1" class="form-control col-2 border-info" readonly>
+                            <input type="text" name="jumin1" id="jumin1" class="form-control col-2 border-info" readonly
+                                value="${param.jumin1}">
                             <label class="col-form-label">&nbsp;&dash;&nbsp;</label>
-                            <input type="text" name="jumin2" id="jumin2" class="form-control col-2 border-info" readonly>
+                            <input type="password" name="jumin2" id="jumin2" class="form-control col-2 border-info" readonly
+                                   value="${param.jumin2}">
                         </div> <!-- 주민번호 -->
 
                         <div class="form-group row">
                             <label class="col-2 col-form-label text-info" for="newid">아이디</label>
-                            <input type="text" name="name" id="newid" class="form-control col-2 border-info">
+                            <input type="text" name="userid" id="newid" class="form-control col-2 border-info">
                             <span class="col-form-label text-danger">
                                 &nbsp;&nbsp;7~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.
                             </span>
@@ -76,7 +79,7 @@
                             <label class="col-2 col-form-label text-info" for="addr1">주소</label>
                             <input type="text" name="addr1" id="addr1" readonly class="form-control col-3 border-info">
                             &nbsp;
-                            <input type="text" name="addr1" id="addr2" class="form-control col-3 border-info">
+                            <input type="text" name="addr2" id="addr2" class="form-control col-3 border-info">
                         </div> <!-- 주소 -->
 
                         <div class="form-group row">
@@ -106,7 +109,7 @@
                             </select>
 
                             <label class="col-form-label">&nbsp;&ndash;&nbsp;</label>
-                            <input type="text" name="hp2" id="hp2" readonly class="form-control col-1 border-info">
+                            <input type="text" name="hp2" id="hp2" class="form-control col-1 border-info">
                             <label class="col-form-label">&nbsp;&ndash;&nbsp;</label>
                             <input type="text" name="hp3" id="hp3" class="form-control col-1 border-info">
                         </div> <!-- 전화번호 -->
@@ -130,6 +133,12 @@
                             <i class="bi bi-x"></i> 취소하기</button>
                     </div> <!-- 버튼들-->
                 </div>
+
+                <input type="hidden" name="jumin" id="jumin">
+                <input type="hidden" name="zipcode" id="zipcode">
+                <input type="hidden" name="email" id="email">
+                <input type="hidden" name="phone" id="phone">
+
             </form>
 
         </div> <!-- 정보입력 -->
