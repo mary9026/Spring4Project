@@ -44,7 +44,7 @@
                         <div class="form-group row">
                             <label class="col-2 col-form-label text-info" for="newid">아이디</label>
                             <input type="text" name="userid" id="newid" class="form-control col-2 border-info">
-                            <span class="col-form-label text-danger">
+                            <span id="uidmsg" class="col-form-label text-danger">
                                 &nbsp;&nbsp;7~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.
                             </span>
                         </div> <!-- 아이디 -->
@@ -71,7 +71,7 @@
                             <label class="col-form-label">&nbsp;&dash;&nbsp;</label>
                             <input type="text" name="zip2" id="zip2" readonly class="form-control col-2 border-info">
                             <span>
-                                &nbsp;&nbsp;<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#zipcode"><i class="bi bi-question-circle"></i>우편번호 찾기</button>
+                                &nbsp;&nbsp;<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#zipmodal"><i class="bi bi-question-circle"></i>우편번호 찾기</button>
                             </span>
                         </div> <!-- 우편번호 -->
 
@@ -91,7 +91,7 @@
                             <input type="text" name="email2" id="email2" readonly class="form-control col-2 border-info igborder">&nbsp;
                             <select id="email3" class="form-control col-2 border-info">
                                 <option>선택하세요.</option>
-                                <option>naver.com</option>
+                                <option value="naver.com">naver.com</option>
                                 <option>nate.com</option>
                                 <option>daum.net</option>
                                 <option>gmail.com</option>
@@ -147,5 +147,58 @@
 
 
     </div> <!-- main -->
+
+    <!-- 우편번호 찾기 모달 -->
+    <div id="zipmodal" class="modal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">우편번호 찾기</h3>
+                    <button type="button" class="close" id="modalx">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="zipfrm">
+                        <div class="form-group row justify-content-center pushzip">
+                            <label for="dong" class="text-primary" style="margin-top: -5px">검색하실 주소의<br> 동이름을 입력하세요.</label> &nbsp;&nbsp;
+                            <input type="text" id="dong" name="dong" class="form-control col-4 border-primary">
+                            &nbsp;&nbsp;<span>
+                            <button type="button" id="findbtn" class="btn btn-primary"><i class="bi bi-search"></i> 검색하기</button>
+                        </span>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div class="text-center">
+                                <hr>
+                                <p class="text-danger">지역의 읍/면/동의 이름을 공백없이 입력하신 후, [검색하기] 버튼을 클릭하세요</p>
+                                <select id="addrlist" name="addrlist" class="form-control" size="10">
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                    <option>123-456  서울 종로구 창신동</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div></div>
+                    </form>
+
+                </div>
+                <div class="modal-footer justify-content-end">
+                    <button type="button" class="btn btn-danger" id="sendbtn"><i class="bi bi-check2-circle"></i> 선택하고 닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
