@@ -41,12 +41,21 @@ $('#joinbtn').on('click', function () {
     else if ($('#addr2').val() == "") alert('나머지 주소를 입력하세요 !!');
     else if ($('#email1').val() == "" || $('#email2').val() == "") alert('이메일을 입력하세요 !!');
     else if ($('#hp2').val() == "" || $('#hp3').val() == "") alert('전화번호를 입력하세요!!');
+    else if (grecaptcha.getResponse() == "")
+        alert("자동가입방지 확인 필요!");
     else {
+        // alert(grecaptcha.getResponse());
+        // 구글 recaptcha 코드 확인
+
         // 분리된 데이터 합치기
         $('#jumin').val( $('#jumin1').val() + '-' + $('#jumin2').val());
         $('#zipcode').val( $('#zip1').val() + '-' + $('#zip2').val());
         $('#email').val( $('#email1').val() + '@' + $('#email2').val());
         $('#phone').val( $('#hp1').val() + '-' + $('#hp2').val() + '-' + $('#hp3').val());
+
+        // recaptcha 코드 유효성 검사를 위한 변수값 설정
+        // 클라이언트에서 생성한 코드를 서버에서도  확인하기 위한 목적
+        $('#g-recaptcha').val(grecaptcha.getResponse());
 
         $('#joinfrm').attr('action', '/join/joinme');
         $('#joinfrm').attr('method', 'post');
@@ -149,7 +158,7 @@ $('#email3').on('change', function(){
 $('#newuid').on('blur', function() { checkuid(); });
 $('#newuid').on('focus', function() {
     $('#uidmsg').text("7~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.");
-    $('#uidmsg').attr('style', 'color: red !important'); });
+    $('#uidmsg').attr('style', 'color:red !important'); });
 
 function checkuid() {
     let uid = $('#newuid').val().trim();
@@ -175,3 +184,8 @@ function checkuid() {
             alert(xhr.status, + "/" + error);
         }); // 비동기 요청 실패시
 }
+
+// joinok
+$('#go2index').on('click', function (){
+    location.href = '/index';
+});

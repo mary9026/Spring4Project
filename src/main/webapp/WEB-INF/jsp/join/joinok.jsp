@@ -28,6 +28,10 @@
             <p>회원가입 이후 아이디와 비밀번호로 일반회원으로
                 로그인 하셔서 추가 인적사항을 등록해주시기 바랍니다.<br>
                 Lorem Ipsum 과 함께 즐거운 시간 되십시오 </p>
+
+            <p>이름 : ${name}</p>
+            <p>이메일 : ${email}</p>
+            <p>가입일시 : ${regdate}</p>
         </div>
         <div class="text-center">
             <button type="button" id="go2index" class="btn btn-success"><i class="bi bi-house-fill" style="position: relative; top: -2px"></i> 메인으로 이동</button>

@@ -12,4 +12,6 @@ public interface MemberDAO {
     List<ZipcodeVO> selectZipcode(String dong);
 
     int selectOneUserid(String uid);
+
+    int selectLogin(MemberVO mvo);
 }
