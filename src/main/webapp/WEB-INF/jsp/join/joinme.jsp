@@ -47,8 +47,8 @@
                         </div> <!-- 주민번호 -->
 
                         <div class="form-group row">
-                            <label class="col-2 col-form-label text-info" for="newid">아이디</label>
-                            <input type="text" name="userid" id="newid" class="form-control col-2 border-info" value="${mvo.userid}">
+                            <label class="col-2 col-form-label text-info" for="newuid">아이디</label>
+                            <input type="text" name="userid" id="newuid" class="form-control col-2 border-info" value="${mvo.userid}">
                             <span id="uidmsg" class="col-form-label text-danger">
                                 &nbsp;&nbsp;7~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.
                             </span>

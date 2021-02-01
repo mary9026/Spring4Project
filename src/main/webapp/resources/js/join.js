@@ -155,10 +155,14 @@ $('#email3').on('change', function(){
 // 아이디 중복체크
 // blur : 커서 포커스가 벗어났을때 (칸 입력이 끝나고 다른 칸 입력하려고 이동했을때)
 
-$('#newuid').on('blur', function() { checkuid(); });
+$('#newuid').on('blur', function() {
+    checkuid();
+});
+
 $('#newuid').on('focus', function() {
     $('#uidmsg').text("7~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.");
-    $('#uidmsg').attr('style', 'color:red !important'); });
+    $('#uidmsg').attr('style', 'color:red !important');
+});
 
 function checkuid() {
     let uid = $('#newuid').val().trim();
@@ -170,8 +174,7 @@ function checkuid() {
     $.ajax({ url: '/join/checkuid',
         type: 'GET', data: { uid: uid }
     }) // 비동기 요청 설정
-
-        .done(function(data) {
+    .done(function(data) {
             let msg = '사용 불가 아이디입니다!!';
             if (data.trim() == '0') {
                 msg = '사용 가능 아이디입니다!';
