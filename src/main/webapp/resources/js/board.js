@@ -36,6 +36,21 @@ $('#bdcmtbtn').on('click', function (){
    }
 });
 
+function addReply(cno) {
+    $('#replyModal').modal('show');
+    $('#cno').val(cno); // 대댓글 작성 시 부모댓글 번호를 cno 에 저장함
+} // 대댓글 대화상자 띄우기기
+
+$('#rpbtn').on ('click', function () {
+    if($('#rereply').val() == '') alert('대댓글을 작성하세요~');
+    else {
+        $('#rpfrm').attr("method", "post");
+        $('#rpfrm').attr("action", "/board/replyok");
+        $('#rpfrm').submit();
+    }
+}); // 대댓글 작성하기
+
+
 $('#rmbdbtn').on('click', function (){
     if (confirm('정말루 삭제하시겠어영 ?')) {
         let param = '?bno=' + $('#bno').val();

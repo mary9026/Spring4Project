@@ -15,7 +15,7 @@ import java.util.*;
 
 public class FileUpDownUtil {
 
-    private String uploadPath = "c:/Java/pdsupload/";
+    private String uploadPath = "c:/ny/Java/pdsupload/";
     // 파일 업로드시 저장된 경로 지정
 
     // 업로드 처리 메서드
