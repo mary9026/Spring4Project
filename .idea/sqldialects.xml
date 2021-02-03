@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/mariadb.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/main/resources/mybatis3/BoardMapper.xml" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mybatis3/PdsMapper.xml" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/main/resources/mybatis3/ReplyMapper.xml" dialect="MariaDB" />
   </component>
 </project>
